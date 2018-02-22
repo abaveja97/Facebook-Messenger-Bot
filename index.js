@@ -19,38 +19,13 @@ app.get('/', function (req, res) {
 })
 
 // for Facebook verification
-/*app.get('/webhook/', function (req, res) {
+app.get('/webhook/', function (req, res) {
 	if (req.query['hub.verify_token'] === 'hello') {
 		res.send(req.query['hub.challenge'])
 	}
 	res.send('Error, wrong token')
-})*/
-app.get('/webhook', function(req, res){
+})
 
-  // Your verify token. Should be a random string.
-   VERIFY_TOKEN = "222582"
-    
-  // Parse the query params
-   mode = req.query['hub.mode'];
-  token = req.query['hub.verify_token'];
-  challenge = req.query['hub.challenge'];
-    
-  // Checks if a token and mode is in the query string of the request
-  if (mode && token) {
-  
-    // Checks the mode and token sent is correct
-    if (mode === 'subscribe' && token === VERIFY_TOKEN) {
-      
-      // Responds with the challenge token from the request
-      console.log('WEBHOOK_VERIFIED');
-      res.status(200).send(challenge);
-    
-    } else {
-      // Responds with '403 Forbidden' if verify tokens do not match
-      res.sendStatus(403);      
-    }
-  }
-});
 
 const myID = 1960455644201170;
 
