@@ -25,15 +25,15 @@ app.get('/', function (req, res) {
 	}
 	res.send('Error, wrong token')
 })"""
-app.get('/webhook', (req, res) => {
+app.get('/webhook', function(req, res){
 
   // Your verify token. Should be a random string.
-  let VERIFY_TOKEN = "<YOUR_VERIFY_TOKEN>"
+   VERIFY_TOKEN = "222582"
     
   // Parse the query params
-  let mode = req.query['hub.mode'];
-  let token = req.query['hub.verify_token'];
-  let challenge = req.query['hub.challenge'];
+   mode = req.query['hub.mode'];
+  token = req.query['hub.verify_token'];
+  challenge = req.query['hub.challenge'];
     
   // Checks if a token and mode is in the query string of the request
   if (mode && token) {
