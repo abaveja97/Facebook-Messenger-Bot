@@ -19,12 +19,12 @@ app.get('/', function (req, res) {
 })
 
 // for Facebook verification
-"""app.get('/webhook/', function (req, res) {
+/*app.get('/webhook/', function (req, res) {
 	if (req.query['hub.verify_token'] === 'hello') {
 		res.send(req.query['hub.challenge'])
 	}
 	res.send('Error, wrong token')
-})"""
+})*/
 app.get('/webhook', function(req, res){
 
   // Your verify token. Should be a random string.
